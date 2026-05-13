@@ -1,8 +1,7 @@
 import streamlit as st
 
 st.title("Late Delivery Risk Prediction")
-import sys
-!{sys.executable} -m pip install streamlit scikit-learn
+
 
 import streamlit as st
 import pandas as pd
