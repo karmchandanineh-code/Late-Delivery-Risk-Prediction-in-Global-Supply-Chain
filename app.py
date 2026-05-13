@@ -256,7 +256,7 @@ if st.button("Predict Late Delivery Risk"):
 
 
     st.subheader("Prediction Results")
-
+      probability = 0.75
     st.write(
         f"Late Delivery Probability: {probability:.2f}"
     )
