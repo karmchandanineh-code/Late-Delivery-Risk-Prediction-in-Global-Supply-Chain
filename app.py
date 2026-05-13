@@ -253,7 +253,7 @@ if st.button("Predict Late Delivery Risk"):
 
     for col in missing_cols:
         sample[col] = 0
- st.subheader("Prediction Results")
+
         shipping_days = 8
 
 if shipping_days >= 7:
