@@ -20,7 +20,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import os
-from sklearn.ensemble import RandomForestClassifier
 
 # Create dummy model and data files for demonstration
 # In a real scenario, these would be provided by the user
