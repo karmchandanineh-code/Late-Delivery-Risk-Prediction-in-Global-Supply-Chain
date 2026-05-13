@@ -280,9 +280,6 @@ elif probability >= 0.3:
 
      st.warning("⚠️ Medium Risk Shipment")
 
- else:
-     
-     st.success("✅ Low Risk Shipment")
 
 # =========================
 # 12. TOP HIGH RISK ORDERS
