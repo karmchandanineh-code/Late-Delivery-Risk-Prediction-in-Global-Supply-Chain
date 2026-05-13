@@ -253,10 +253,11 @@ if st.button("Predict Late Delivery Risk"):
 
     for col in missing_cols:
         sample[col] = 0
-
+        
+    model = AlgorithmName(parameters)
+    probability = model.predict_proba(sample)[0][1]
 
     st.subheader("Prediction Results")
-      probability = 0.75
     st.write(
         f"Late Delivery Probability: {probability:.2f}"
     )
