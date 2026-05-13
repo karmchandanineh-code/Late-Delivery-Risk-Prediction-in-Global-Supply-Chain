@@ -272,11 +272,11 @@ print(probability)
 
    
     # Risk category
-    if probability >= 0.7:
+if probability >= 0.7:
 
-        st.error("⚠️ High Risk Shipment")
+     st.error("⚠️ High Risk Shipment")
 
-    elif probability >= 0.3:
+elif probability >= 0.3:
 
         st.warning("⚠️ Medium Risk Shipment")
 
