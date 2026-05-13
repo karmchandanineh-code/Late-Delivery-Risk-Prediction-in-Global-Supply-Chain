@@ -27,7 +27,6 @@ import os
 # Create 'models' directory if it doesn't exist
 os.makedirs('models', exist_ok=True)
 # Create a dummy model file
-dummy_model = RandomForestClassifier(random_state=42)
 # Define feature names that the model expects for training
 dummy_feature_columns = [
     'Order_Item_Quantity', 'Sales', 'Order_Item_Product_Price',
