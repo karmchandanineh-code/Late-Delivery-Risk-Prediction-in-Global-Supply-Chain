@@ -254,17 +254,8 @@ if st.button("Predict Late Delivery Risk"):
     for col in missing_cols:
         sample[col] = 0
         
-       from xgboost import XGBClassifier
-
-         model = XGBClassifier(
-           n_estimators=300,
-           learning_rate=0.05,
-            max_depth=8,
-            subsample=0.8,
-            colsample_bytree=0.8,
-            random_state=42
-     ) 
-    model = AlgorithmName(parameters)
+           model.fit(X_train, y_train)
+        
     probability = model.predict_proba(sample)[0][1]
 
     st.subheader("Prediction Results")
