@@ -150,7 +150,7 @@ col4.metric(
 
 st.subheader("Late Delivery Risk Distribution")
 
-fig = pd.histogram(
+fig =histogram(
     df,
     x='Late_delivery_risk',
     color='Late_delivery_risk',
