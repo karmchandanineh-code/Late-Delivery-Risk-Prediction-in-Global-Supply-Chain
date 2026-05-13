@@ -150,9 +150,6 @@ col4.metric(
 
 st.subheader("Late Delivery Risk Distribution")
 
-st.plotly_chart(
-    use_container_width=True
-)
 
 # =========================
 # 9. SHIPPING MODE ANALYSIS
@@ -165,18 +162,6 @@ shipping_analysis = (
     ['Late_delivery_risk']
     .mean()
     .reset_index()
-)
-
-fig2 = px.bar(
-    shipping_analysis,
-    x='Shipping_Mode_Standard Class',
-    y='Late_delivery_risk',
-    title='Shipping Mode vs Delay Risk'
-)
-
-st.plotly_chart(
-    fig2,
-    use_container_width=True
 )
 
 # =========================
