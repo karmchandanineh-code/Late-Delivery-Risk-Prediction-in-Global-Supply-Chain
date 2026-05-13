@@ -280,7 +280,7 @@ elif probability >= 0.3:
 
         st.warning("⚠️ Medium Risk Shipment")
 
-    else:
+ else:
 
         st.success("✅ Low Risk Shipment")
 
