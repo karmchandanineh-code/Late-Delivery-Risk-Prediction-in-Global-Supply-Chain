@@ -5,7 +5,6 @@ st.title("Late Delivery Risk Prediction")
 import streamlit as st
 import pandas as pd
 import numpy as np
-import plotly.express as px
 
 # =========================
 # 2. PAGE CONFIGURATION
@@ -16,8 +15,6 @@ st.set_page_config(
     page_icon="🚚",
     layout="wide"
 )
-
-
 
 # =========================
 # 4. LOAD DATASET
