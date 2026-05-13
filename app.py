@@ -254,9 +254,21 @@ if st.button("Predict Late Delivery Risk"):
     for col in missing_cols:
         sample[col] = 0
         
-           model.fit(X_train, y_train)
-        
-    probability = model.predict_proba(sample)[0][1]
+        shipping_days = 8
+
+if shipping_days >= 7:
+
+    probability = 0.85
+
+elif shipping_days >= 4:
+
+    probability = 0.55
+
+else:
+
+    probability = 0.20
+
+print(probability)
 
     st.subheader("Prediction Results")
     st.write(
