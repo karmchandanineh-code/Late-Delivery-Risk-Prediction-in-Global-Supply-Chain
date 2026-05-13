@@ -249,18 +249,11 @@ if st.button("Predict Late Delivery Risk"):
     })
 
     # Add missing columns with 0
-    missing_cols = set(model.feature_names_in_) - set(sample.columns)
+    missing_cols = set(sample.columns)
 
     for col in missing_cols:
         sample[col] = 0
 
-    # Arrange columns properly
-    sample = sample[model.feature_names_in_]
-
-    # Prediction
-    prediction = model.predict(sample)[0]
-
-    probability = model.predict_proba(sample)[0][1]
 
     st.subheader("Prediction Results")
 
