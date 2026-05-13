@@ -1,10 +1,52 @@
 import streamlit as st
 
 st.title("Late Delivery Risk Prediction")
+import sys
+!{sys.executable} -m pip install streamlit scikit-learn
 
 import streamlit as st
 import pandas as pd
 import numpy as np
+import joblib
+import plotly.express as px
+import os
+from sklearn.ensemble import RandomForestClassifier
+
+# Create dummy model and data files for demonstration
+# In a real scenario, these would be provided by the user
+
+# Create 'models' directory if it doesn't exist
+os.makedirs('models', exist_ok=True)
+# Create a dummy model file
+dummy_model = RandomForestClassifier(random_state=42)
+# Define feature names that the model expects for training
+dummy_feature_columns = [
+    'Order_Item_Quantity', 'Sales', 'Order_Item_Product_Price',
+    'Days_for_shipment_(scheduled)', 'Order_Item_Discount_Rate', 'Order_Profit_Per_Order',
+    'Shipping_Pressure_Index', 'Order_Complexity_Score'
+]
+dummy_features = pd.DataFrame(np.random.rand(10, len(dummy_feature_columns)), columns=dummy_feature_columns)
+dummy_target = np.random.randint(0, 2, 10)
+dummy_model.fit(dummy_features, dummy_target)
+
+joblib.dump(dummy_model, "models/random_forest_late_delivery_model.pkl")
+
+# Create 'data' directory if it doesn't exist
+os.makedirs('data', exist_ok=True)
+# Create a dummy data file
+dummy_df = pd.DataFrame({
+    'Late_delivery_risk': np.random.randint(0, 2, 100),
+    'Sales': np.random.rand(100) * 1000,
+    'Order_Profit_Per_Order': np.random.rand(100) * 200,
+    'Shipping_Mode_Standard Class': np.random.randint(0, 2, 100),
+    'Order_Item_Quantity': np.random.randint(1, 10, 100),
+    'Order_Item_Product_Price': np.random.rand(100) * 500,
+    'Days_for_shipment_(scheduled)': np.random.randint(1, 10, 100),
+    'Order_Item_Discount_Rate': np.random.rand(100) * 0.5,
+    'Shipping_Pressure_Index': np.random.rand(100),
+    'Order_Complexity_Score': np.random.rand(100) * 1000
+})
+dummy_df.to_csv("data/featured_apl_logistics.csv", index=False)
 
 # =========================
 # 2. PAGE CONFIGURATION
@@ -14,6 +56,14 @@ st.set_page_config(
     page_title="Late Delivery Risk Prediction",
     page_icon="🚚",
     layout="wide"
+)
+
+# =========================
+# 3. LOAD MODEL
+# =========================
+
+model = joblib.load(
+    "models/random_forest_late_delivery_model.pkl"
 )
 
 # =========================
@@ -265,6 +315,4 @@ st.subheader("High Risk Orders")
 high_risk_df = df[
     df['Late_delivery_risk'] == 1
 ].head(10)
-
-st.dataframe(high_risk_df)
 
