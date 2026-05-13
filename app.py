@@ -26,7 +26,6 @@ import os
 
 # Create 'models' directory if it doesn't exist
 os.makedirs('models', exist_ok=True)
-# Create a dummy model file
 # Define feature names that the model expects for training
 dummy_feature_columns = [
     'Order_Item_Quantity', 'Sales', 'Order_Item_Product_Price',
@@ -35,7 +34,6 @@ dummy_feature_columns = [
 ]
 dummy_features = pd.DataFrame(np.random.rand(10, len(dummy_feature_columns)), columns=dummy_feature_columns)
 dummy_target = np.random.randint(0, 2, 10)
-dummy_model.fit(dummy_features, dummy_target)
 
 
 # Create 'data' directory if it doesn't exist
