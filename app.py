@@ -5,7 +5,6 @@ st.title("Late Delivery Risk Prediction")
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
 import plotly.express as px
 
 # =========================
@@ -18,13 +17,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# =========================
-# 3. LOAD MODEL
-# =========================
 
-model = joblib.load(
-    "models/random_forest_late_delivery_model.pkl"
-)
 
 # =========================
 # 4. LOAD DATASET
