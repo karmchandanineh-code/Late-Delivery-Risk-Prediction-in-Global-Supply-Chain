@@ -150,15 +150,7 @@ col4.metric(
 
 st.subheader("Late Delivery Risk Distribution")
 
-fig =histogram(
-    df,
-    x='Late_delivery_risk',
-    color='Late_delivery_risk',
-    title='Late Delivery Risk Distribution'
-)
-
 st.plotly_chart(
-    fig,
     use_container_width=True
 )
 
