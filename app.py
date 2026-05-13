@@ -270,11 +270,7 @@ else:
 
 print(probability)
 
-    
-    st.write(
-        f"Late Delivery Probability: {probability:.2f}"
-    )
-
+   
     # Risk category
     if probability >= 0.7:
 
